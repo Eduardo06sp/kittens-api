@@ -21,6 +21,8 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
   end
 
+  private
+
   def kitten_params
     params.require(:kitten).permit(:name, :age, :cuteness, :softness)
   end
