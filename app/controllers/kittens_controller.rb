@@ -20,4 +20,8 @@ class KittensController < ApplicationController
   def show
     @kitten = Kitten.find(params[:id])
   end
+
+  def kitten_params
+    params.require(:kitten).permit(:name, :age, :cuteness, :softness)
+  end
 end
