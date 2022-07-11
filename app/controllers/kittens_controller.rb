@@ -8,6 +8,6 @@ class KittensController < ApplicationController
   end
 
   def show
-    @kitten = params[:id]
+    @kitten = Kitten.find(params[:id])
   end
 end
