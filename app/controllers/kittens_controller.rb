@@ -21,6 +21,16 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
   end
 
+  def update
+    @kitten = Kitten.find(params[:id])
+
+    if @kitten.update(kitten_params)
+      redirect_to @kitten
+    else
+      puts 'FAILURE IT IS A FAILURE'
+    end
+  end
+
   def show
     @kitten = Kitten.find(params[:id])
   end
