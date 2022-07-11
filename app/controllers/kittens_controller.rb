@@ -3,6 +3,10 @@ class KittensController < ApplicationController
     @kittens = Kitten.all
   end
 
+  def new
+    @kitten = Kitten.new
+  end
+
   def show
     @kitten = params[:id]
   end
