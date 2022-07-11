@@ -1,0 +1,12 @@
+<div class="kittens-container">
+  <% @kittens.each do |kitten| %>
+    <div class="kitten-container">
+      <ul>
+        <li>Name: <%= kitten.name %></li>
+        <li>Age: <%= kitten.age %></li>
+        <li>Cuteness: <%= kitten.cuteness %></li>
+        <li>Softness: <%= kitten.softness %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
