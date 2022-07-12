@@ -25,7 +25,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
 
     if @kitten.update(kitten_params)
-      redirect_to @kitten
+      redirect_to @kitten, notice: 'Successfully updated kitten!'
     else
       puts 'FAILURE IT IS A FAILURE'
     end
