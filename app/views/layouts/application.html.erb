@@ -12,7 +12,17 @@
 
   <body>
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
+
+      <% if name == 'error' %>
+        <ul>
+          <% msg.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <%= content_tag :div, msg, class: name %>
+      <% end %>
+
     <% end %>
     <%= yield %>
   </body>
