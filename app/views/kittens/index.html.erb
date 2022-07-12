@@ -6,6 +6,10 @@
         <li>Age: <%= kitten.age %></li>
         <li>Cuteness: <%= kitten.cuteness %></li>
         <li>Softness: <%= kitten.softness %></li>
+        <li><%= link_to 'Destroy', kitten_path(kitten), data: {
+          turbo_method: :delete,
+          turbo_confirm: 'Are you sure you want to get rid of this adorable kitten?'
+        } %></li>
       </ul>
     </div>
   <% end %>
