@@ -11,7 +11,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.new(kitten_params)
 
     if @kitten.save
-      redirect_to @kitten
+      redirect_to @kitten, notice: 'Successfully created kitten!'
     else
       puts 'FAILURE IT IS A FAILURE'
     end
