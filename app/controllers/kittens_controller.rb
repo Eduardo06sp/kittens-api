@@ -29,7 +29,9 @@ class KittensController < ApplicationController
     if @kitten.update(kitten_params)
       redirect_to @kitten, notice: 'Successfully updated kitten!'
     else
-      puts 'FAILURE IT IS A FAILURE'
+      flash.now[:alert] = 'Uh-oh! Could not update kitten!'
+      flash.now[:error] = @kitten.errors.full_messages
+      render :edit, status: :unprocessable_entity
     end
   end
 
