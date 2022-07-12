@@ -13,7 +13,9 @@ class KittensController < ApplicationController
     if @kitten.save
       redirect_to @kitten, notice: 'Successfully created kitten!'
     else
-      puts 'FAILURE IT IS A FAILURE'
+      flash.now[:alert] = 'Could not create kitten!'
+      flash.now[:error] = @kitten.errors.full_messages
+      render :new, status: :unprocessable_entity
     end
   end
 
