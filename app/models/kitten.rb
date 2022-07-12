@@ -4,4 +4,9 @@ class Kitten < ApplicationRecord
             :cuteness,
             :softness,
             presence: true
+
+  validates :age,
+            :cuteness,
+            :softness,
+            numericality: true
 end
